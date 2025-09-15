@@ -1,62 +1,31 @@
 ﻿<!DOCTYPE html>
-<html lang="uk" data-theme="system">
+<html lang="uk">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Anoma Intent App — Головна</title>
-  <meta name="description" content="Демо застосунку Anoma Intent з мультисторінками на GitHub Pages." />
+  <title>Anoma Intent App</title>
   <base href="/anoma-spa-ghpages/">
 
-  <link rel="icon" href="icon-192.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="manifest" href="manifest.webmanifest?v=10">
-  <meta name="theme-color" content="#0f172a">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Anoma Intent App — демо">
-  <meta property="og:description" content="Мультисторінкова демо-апка Anoma Intent.">
-  <meta property="og:url" content="https://nkvdmax.github.io/anoma-spa-ghpages/">
-  <meta property="og:image" content="https://nkvdmax.github.io/anoma-spa-ghpages/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Anoma Intent App",
-    "url": "https://nkvdmax.github.io/anoma-spa-ghpages/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://nkvdmax.github.io/anoma-spa-ghpages/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="styles.css?v=11">
+  <script src="main.js?v=11" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="/anoma-spa-ghpages/">Anoma</a>
-    <nav class="nav" aria-label="Головна навігація">
+  <header>
+    <a href="/anoma-spa-ghpages/">Anoma</a>
+    <nav>
       <a href="/anoma-spa-ghpages/" data-link>Головна</a>
       <a href="/anoma-spa-ghpages/about" data-link>Про нас</a>
       <a href="/anoma-spa-ghpages/demo" data-link>Демо</a>
     </nav>
-    <div class="actions">
-      <button id="themeToggle" class="btn" aria-label="Перемкнути тему">🌓</button>
-      <a class="btn outline" href="https://github.com/nkvdmax/anoma-spa-ghpages" target="_blank" rel="noopener">GitHub</a>
-    </div>
   </header>
 
-  <main id="app" tabindex="-1" aria-live="polite"></main>
+  <main id="app"></main>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Anoma Intent App · <a href="/anoma-spa-ghpages/privacy" data-link>Політика конфіденційності</a></p>
+  <footer>
+    <p>© <span id="year"></span> Anoma Intent App</p>
   </footer>
 
   <script>window.__BASE__ = "/anoma-spa-ghpages/";</script>
-  <script src="main.js?v=10" defer></script>
-  <!-- SW тимчасово відключено для debug -->
+  <!-- Service Worker вимкнено -->
 </body>
 </html>
