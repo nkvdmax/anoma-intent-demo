@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "Anoma Intent App",
   "short_name": "Anoma",
   "start_url": "/anoma-spa-ghpages/",
@@ -19,3 +19,4 @@
     }
   ]
 }
+
