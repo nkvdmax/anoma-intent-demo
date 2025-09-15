@@ -1,31 +1,61 @@
 ﻿<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Anoma Intent App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Anoma Intent App — Головна</title>
   <base href="/anoma-spa-ghpages/">
-
-  <link rel="stylesheet" href="styles.css?v=11">
-  <script src="main.js?v=11" defer></script>
+  <style>
+    :root{--bg:#0b1020;--fg:#e6e9f2;--muted:#9aa3b2;--accent:#6ee7b7}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--bg);color:var(--fg)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header,footer{max-width:960px;margin:24px auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+    header{justify-content:space-between;border-bottom:1px solid #1f2937}
+    nav a{margin-right:12px}
+    main{max-width:960px;margin:24px auto;padding:16px}
+    .card{border:1px solid #1f2937;border-radius:14px;padding:16px;background:#0f172a}
+    .ok{display:inline-block;background:#063;color:#bff;padding:4px 8px;border-radius:8px;margin-left:8px}
+  </style>
 </head>
 <body>
   <header>
-    <a href="/anoma-spa-ghpages/">Anoma</a>
+    <strong>Anoma</strong>
     <nav>
       <a href="/anoma-spa-ghpages/" data-link>Головна</a>
       <a href="/anoma-spa-ghpages/about" data-link>Про нас</a>
       <a href="/anoma-spa-ghpages/demo" data-link>Демо</a>
     </nav>
+    <a href="https://github.com/nkvdmax/anoma-spa-ghpages" target="_blank" rel="noopener">GitHub</a>
   </header>
 
-  <main id="app"></main>
+  <main id="app">
+    <h1>Працює <span class="ok">OK</span></h1>
+    <div class="card">
+      <p>Ця версія сторінки не використовує зовнішні <code>styles.css</code> та <code>main.js</code>. Якщо ви бачите оформлення — проблема була лише у шляхах до ресурсів.</p>
+      <p>Далі я підключу файли коректно.</p>
+    </div>
+  </main>
 
   <footer>
-    <p>© <span id="year"></span> Anoma Intent App</p>
+    © <span id="year"></span> Anoma Intent App · <a href="/anoma-spa-ghpages/privacy" data-link>Політика конфіденційності</a>
   </footer>
 
-  <script>window.__BASE__ = "/anoma-spa-ghpages/";</script>
-  <!-- Service Worker вимкнено -->
+  <script>
+    // мінімальний JS для року і SPA-навігації
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const BASE = "/anoma-spa-ghpages/";
+    function key(p){p=p.replace(BASE,""); if(p.startsWith("/"))p=p.slice(1); if(p.endsWith("/"))p=p.slice(0,-1); return p||"";}
+    const routes={
+      "": "<p>Це головна. Перейдіть на <a data-link href='/anoma-spa-ghpages/about'>Про нас</a> або <a data-link href='/anoma-spa-ghpages/demo'>Демо</a>.</p>",
+      "about": "<p>Сторінка «Про нас».</p>",
+      "demo": "<p>Сторінка «Демо».</p>",
+      "privacy": "<p>Політика конфіденційності — приклад.</p>"
+    };
+    function render(){ const k=key(location.pathname); document.getElementById('app').insertAdjacentHTML('beforeend',""); document.getElementById('app').innerHTML = routes[k]||routes[""]; }
+    document.addEventListener("click",e=>{const a=e.target.closest("a[data-link]"); if(!a) return; e.preventDefault(); history.pushState({}, "", a.getAttribute("href")); render();});
+    addEventListener("popstate",render); render();
+  </script>
 </body>
 </html>
