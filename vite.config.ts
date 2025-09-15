@@ -1,9 +1,7 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-// https://vitejs.dev/config/
+﻿import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 export default defineConfig({
+  base: "/anoma-intent-demo/",
   plugins: [react()],
-  base: '/anoma-intent-demo/',   // ✅ важливо для GitHub Pages
-  server: { port: 5173 }
-})
+  build: { outDir: "dist", sourcemap: false }
+});
