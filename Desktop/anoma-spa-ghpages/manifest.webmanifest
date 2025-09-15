@@ -1,0 +1,21 @@
+{
+  "name": "Anoma Intent App",
+  "short_name": "Anoma",
+  "start_url": "/anoma-spa-ghpages/",
+  "scope": "/anoma-spa-ghpages/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/anoma-spa-ghpages/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/anoma-spa-ghpages/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
