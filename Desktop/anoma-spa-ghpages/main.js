@@ -1,9 +1,8 @@
-// Base path for GH Pages
+﻿// Base path for GH Pages
 const BASE = window.__BASE__ || "/anoma-spa-ghpages/";
 
 // --- Tiny client-side router (History API)
 const routes = {
-
   "": {
     title: "Anoma — Головна",
     description: "Демо застосунку Anoma Intent з мультисторінками.",
@@ -24,7 +23,6 @@ const routes = {
         </div>
       </section>`
   },
-
   "about": {
     title: "Anoma — Про нас",
     description: "Інформація про проект Anoma Intent App.",
@@ -35,7 +33,6 @@ const routes = {
         <div class="card"><p>Змініть контент під свій проект.</p></div>
       </section>`
   },
-
   "demo": {
     title: "Anoma — Демо",
     description: "Демонстрація можливостей SPA.",
@@ -46,7 +43,6 @@ const routes = {
         <img src="https://picsum.photos/960/360" alt="Демо-зображення" loading="lazy" decoding="async">
       </section>`
   },
-
   "privacy": {
     title: "Anoma — Політика конфіденційності",
     description: "Приклад сторінки політики конфіденційності.",
@@ -58,7 +54,6 @@ const routes = {
   }
 };
 
-// Normalize pathname to a key
 function pathToKey(pathname) {
   let path = pathname.replace(BASE, "");
   if (path.startsWith("/")) path = path.slice(1);
