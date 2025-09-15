@@ -1,4 +1,4 @@
-﻿const CACHE = "anoma-v2";
+﻿const CACHE = "anoma-v3";
 const ASSETS = [
   "/anoma-spa-ghpages/",
   "/anoma-spa-ghpages/index.html",
@@ -32,5 +32,6 @@ self.addEventListener("fetch", (e) => {
     );
   }
 });
+
 
 
